@@ -27,134 +27,31 @@ export default {
       const mockData = [
         {
           id: 'g1',
-          name: '名称1',
-          count: 123456,
-          label: 'xx元',
-          rate: 0.97,
-          status: 'S',
+          name: 'DESKTOP-620124M', // 主机名
+          ip: '180.169.153.154', // IP
+          status: 'runing', // 主机类型
           img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
           childList: [
             {
-              id: 'g12',
-              name: '显示不全，鼠标移上来试试',
-              count: 123456,
-              label: 'xx元',
-              rate: 0.123,
-              status: 'S',
-              img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-              childList: [
-                {
-                  id: 'g121',
-                  name: '名称3',
-                  count: 123456,
-                  label: 'xx元',
-                  rate: 0.123,
-                  status: 'S',
-                  img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-                  childList: [
-                    {
-                      id: 'g1211',
-                      name: '名称4',
-                      count: 123456,
-                      label: 'xx元',
-                      rate: 0.123,
-                      status: 'I',
-                      img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-                      childList: []
-                    }
-                  ]
-                },
-                {
-                  id: 'g122',
-                  name: '名称5',
-                  count: 123456,
-                  label: 'xx元',
-                  rate: 0.96,
-                  status: 'S',
-                  img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-                  childList: [
-                    {
-                      id: 'g1221',
-                      name: '名称6',
-                      count: 123456,
-                      label: 'xx元',
-                      rate: 0.123,
-                      status: 'S',
-                      img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-                      childList: [
-                        {
-                          id: 'g12211',
-                          name: '名称6-1',
-                          count: 123456,
-                          label: 'xx元',
-                          rate: 0.123,
-                          status: 'I',
-                          img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-                          childList: []
-                        }
-                      ]
-                    },
-                    {
-                      id: 'g1222',
-                      name: '名称7',
-                      count: 123456,
-                      label: 'xx元',
-                      rate: 0.123,
-                      status: 'S',
-                      img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-                      childList: []
-                    }
-                  ]
-                },
-                {
-                  id: 'g123',
-                  name: '名称8',
-                  count: 123456,
-                  label: 'xx元',
-                  rate: 0.23,
-                  status: 'S',
-                  img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-                  childList: [
-                    {
-                      id: 'g1231',
-                      name: '名称8-1',
-                      count: 123456,
-                      label: 'xx元',
-                      rate: 0.123,
-                      status: 'I',
-                      img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-                      childList: []
-                    }
-                  ]
-                }
-              ]
-            },
-            {
               id: 'g13',
-              name: '名称9',
-              count: 123456,
-              label: 'xx元',
-              rate: 0.123,
-              status: 'S',
+              name: 'DESKTOP-620124M',
+              ip: '180.169.153.15',
+              status: 'runing',
               img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
               childList: [
                 {
                   id: 'g131',
                   name: '名称10',
-                  count: 123456,
-                  label: 'xx元',
-                  rate: 0.123,
-                  status: 'I',
-                  img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
+                  ip: '223.255.255.255',
+                  status: 'stop',
+                  img: 'https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*Q_FQT6nwEC8AAAAAAAAAAABkARQnAQ',
                   childList: []
                 },
                 {
                   id: 'g132',
                   name: '名称11',
-                  count: 123456,
-                  label: 'xx元',
-                  rate: 0.123,
-                  status: 'I',
+                  ip: '223.255.255.255',
+                  status: 'runing',
                   img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
                   childList: []
                 }
@@ -163,11 +60,9 @@ export default {
             {
               id: 'g14',
               name: '名称12',
-              count: 123456,
-              label: 'xx元',
-              rate: 0.123,
-              status: 'I',
-              img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
+              ip: '223.255.255.255',
+              status: 'stop',
+              img: 'https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png',
               childList: []
             }
           ]
@@ -239,7 +134,7 @@ export default {
           {
             shapeType: 'flow-rect',
             draw(cfg, group) {
-              const { name = '', lightColor, hasChildren, label, rate, collapsed, img } = cfg
+              const { name = '', lightColor, hasChildren, ip, collapsed, img } = cfg
               // 逻辑不应该在这里判断
               const rectConfig = {
                 width: 184, // 子节点的宽
@@ -263,42 +158,30 @@ export default {
                 }
               })
 
-              // label title
+              // 主机名称
               group.addShape('text', {
                 attrs: {
                   ...textConfig,
-                  x: 12,
+                  x: 42,
                   y: 8,
                   text: name.length > 10 ? name.substr(0, 10) + '...' : name,
                   fontSize: 14,
-                  fill: '#000',
+                  fontWeight: 600,
+                  fill: lightColor,
                   cursor: 'pointer',
                   isTitleShape: true
                 }
               })
 
-              // label count
+              // IP
               group.addShape('text', {
                 attrs: {
                   ...textConfig,
-                  x: 12,
-                  y: 34,
-                  text: label,
-                  fontSize: 20,
-                  fill: '#000'
-                }
-              })
-
-              // label percentage
-              group.addShape('text', {
-                attrs: {
-                  ...textConfig,
-                  x: 178,
-                  y: 37,
-                  text: `${((rate || 0) * 100).toFixed(2)}%`,
+                  x: 58,
+                  y: 42,
+                  text: ip,
                   fontSize: 14,
-                  textAlign: 'right',
-                  fill: lightColor
+                  fill: '#000'
                 }
               })
 
@@ -326,6 +209,31 @@ export default {
                 }
               })
 
+              // img图片图形
+              group.addShape('image', {
+                attrs: {
+                  x: 6,
+                  y: 26,
+                  width: 40,
+                  height: 40,
+                  show: true,
+                  offset: 0, // 用于调整图标的左右位置
+                  img: img
+                }
+              })
+
+              // 状态圆点
+              group.addShape('circle', {
+                attrs: {
+                  x: 25,
+                  y: 13,
+                  width: 16,
+                  height: 16,
+                  r: 8,
+                  fill: lightColor
+                }
+              })
+              
               if (hasChildren) {
                 // collapse circle圆
                 group.addShape('circle', {
@@ -356,20 +264,6 @@ export default {
                   }
                 })
               }
-
-              // img图片图形
-              group.addShape('image', {
-                attrs: {
-                  // ...textConfig,
-                  x: 80,
-                  y: 30,
-                  width: 16,
-                  height: 16,
-                  show: true,
-                  offset: 0, // 用于调整图标的左右位置
-                  img: img
-                }
-              })
 
               this.drawLinkPoints(cfg, group)
               return rect
@@ -761,7 +655,7 @@ export default {
           config: { defaultLevel = 10, padding = [20, 20] }
         } = props
         data.forEach((item, index) => {
-          const { status, rate } = item
+          const { status } = item
           const children = get(item, 'childList', [])
           const recordIndex = parentIndex !== undefined ? parentIndex + '-' + index : index + ''
           maxMatrixY = index === 0 ? maxMatrixY : maxMatrixY + 1
@@ -771,11 +665,11 @@ export default {
             getKeys(children, childrenKeys)
           }
           let lightColor
-          if (status === 'I') {
-            lightColor = '#DCDFE5'
+          // 状态
+          if (status === 'runing') {
+            lightColor = '#01DF3A' // 运行中
           } else {
-            // lightColor = rate >= 0.95 ? '#1890FF' : '#EB2F96'
-            lightColor = '#EB2F96'
+            lightColor = '#BDBDBD' // 停止
           }
           item = {
             ...item,
