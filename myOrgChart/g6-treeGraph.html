@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>G6</title>
+  <style>
+    html,
+    body {
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      height: 100%;
+      font-family: Helvetica;
+      overflow: hidden;
+    }
+
+    #mountNode {
+      width: 100%;
+      height: 100%;
+      /* background-color: #000; */
+    }
+  </style>
+
+</head>
+
+<body>
+  <script src="js/g6.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+
+  <!-- 创建容器 -->
+  <div id="mountNode"></div>
+
+  <script>
+    $(function () {
+  //     fetch('https://gw.alipayobjects.com/os/antvdemo/assets/data/algorithm-category.json')
+  // .then(res => res.json())
+  // .then(data => {
+  //   console.log(data)
+  //   const width = document.getElementById('mountNode').scrollWidth;
+  //   const height = document.getElementById('mountNode').scrollHeight || 500;
+  //   const graph = new G6.TreeGraph({
+  //     container: 'mountNode',
+  //     width,
+  //     height,
+  //     modes: {
+  //       default: [
+  //         {
+  //           type: 'collapse-expand',
+  //           onChange: function onChange(item, collapsed) {
+  //             const data = item.get('model').data;
+  //             data.collapsed = collapsed;
+  //             return true;
+  //           },
+  //         },
+  //         'drag-canvas',
+  //         'zoom-canvas',
+  //       ],
+  //     },
+  //     defaultNode: {
+  //       size: 26,
+  //       anchorPoints: [
+  //         [0, 0.5],
+  //         [1, 0.5],
+  //       ],
+  //       style: {
+  //         fill: '#C6E5FF',
+  //         stroke: '#5B8FF9',
+  //       },
+  //     },
+  //     defaultEdge: {
+  //       type: 'cubic-horizontal',
+  //       style: {
+  //         stroke: '#A3B1BF',
+  //       },
+  //     },
+  //     layout: {
+  //       type: 'mindmap',
+  //       direction: 'H',
+  //       getHeight: () => {
+  //         return 16;
+  //       },
+  //       getWidth: () => {
+  //         return 16;
+  //       },
+  //       getVGap: () => {
+  //         return 10;
+  //       },
+  //       getHGap: () => {
+  //         return 50;
+  //       },
+  //     },
+  //   });
+
+  //   let centerX = 0;
+  //   graph.node(function(node) {
+  //     if (node.id === 'Modeling Methods') {
+  //       centerX = node.x;
+  //     }
+
+  //     return {
+  //       label: node.id,
+  //       labelCfg: {
+  //         position:
+  //           node.children && node.children.length > 0
+  //             ? 'left'
+  //             : node.x > centerX
+  //             ? 'right'
+  //             : 'left',
+  //         offset: 5,
+  //       },
+  //     };
+  //   });
+
+  //   graph.data(data);
+  //   graph.render();
+  //   graph.fitView();
+  // });
+      function initTreeGraph(Data) {
+        const width = document.getElementById('mountNode').scrollWidth;
+        const height = document.getElementById('mountNode').scrollHeight || 500;
+        const graph = new G6.TreeGraph({
+          container: 'mountNode',
+          width,
+          height,
+          modes: {
+            default: [
+              {
+                type: 'collapse-expand',
+                onChange: function onChange(item, collapsed) {
+                  console.log(item.get('model').data)
+                  const data = item.get('model').data;
+                  data.collapsed = collapsed;
+                  return true;
+                },
+              },
+              'drag-canvas',
+              'zoom-canvas',
+            ],
+          },
+          defaultNode: {
+            size: 26,
+            anchorPoints: [
+              [0, 0.5],
+              [1, 0.5],
+            ],
+            style: {
+              fill: '#C6E5FF',
+              stroke: '#5B8FF9',
+            },
+          },
+          defaultEdge: {
+            type: 'cubic-horizontal',
+            style: {
+              stroke: '#A3B1BF',
+            },
+          },
+          layout: {
+            type: 'mindmap',
+            direction: 'H', // 树的布局方向
+            getHeight: () => { // 每个节点的高度
+              return 16;
+            },
+            getWidth: () => { // 每个节点的宽度
+              return 16;
+            },
+            getVGap: () => { // 每个节点的垂直间隙
+              return 10;
+            },
+            getHGap: () => { // 每个节点的水平间隙
+              return 50;
+            },
+            // getSide: d => { // 节点排布在根节点的左侧/右侧
+            //   if ((d.id)%2 === 0) {
+            //     return 'left';
+            //   }
+            //   return 'right';
+            // }
+          },
+        });
+
+        let centerX = 0;
+        graph.node(function (node) {
+          if (node.id === 1 || node.id === '1') {
+            centerX = node.x;
+          }
+
+          return {
+            label: node.id,
+            labelCfg: {
+              position:
+                node.children && node.children.length > 0
+                  ? 'left'
+                  : node.x > centerX
+                    ? 'right'
+                    : 'left',
+              offset: 5,
+            },
+          };
+        });
+        // console.log(Data)
+        graph.data(Data);
+        graph.render();
+        graph.fitView();
+      }
+
+      /**
+       * 构造树型结构数据
+       * @param {*} source 数据源
+       * @param {*} id id字段 默认 'id'
+       * @param {*} parentId 父节点字段 默认 'pid'
+       * @param {*} children 孩子节点字段 默认 'children'
+       * @param {*} rootId 根Id 默认 0
+       */
+      function treeData(source, id, parentId, children, rootId) {
+        id = id || 'id'
+        parentId = parentId || 'pid'
+        children = children || 'children'
+        rootId = rootId || 0
+        const cloneData = JSON.parse(JSON.stringify(source))// 对源数据深度克隆
+        return cloneData.filter(father => {
+          const branchArr = cloneData.filter(child => father[id] === child[parentId])// 返回每一项的子级数组
+          branchArr.length > 0 ? father[children] = branchArr : delete father[children]// 如果存在子级，则给父级添加一个children属性，并赋值
+          return father[parentId] === rootId // 返回第一层
+        })
+      }
+
+      /*
+      * 递归循环tree结构
+      * @param {*} source 数据源
+      */
+      function forEachTree(source) {
+        source.forEach((res, index) => {
+          switch (res.device_type) {
+            case "交换机":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "电脑":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "防火墙":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "监控审计":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "PLC":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "VM":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "卡巴":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "Esxi":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "威努特虚拟机1":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "威努特虚拟机2":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "威努特虚拟机3":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "威努特虚拟机4":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "威努特虚拟机5":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "威努特虚拟机6":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "威努特虚拟机7":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "威努特虚拟机8":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "威努特虚拟机9":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "威努特虚拟机10":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "启明虚拟机":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "亚信虚拟机":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "卡巴综合区管理地址":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "卡巴管理中心":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "豌豆服务器1":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "豌豆服务器2":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "存储":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "无线AP":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "PLC电脑主机":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "攻击PC":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "OS":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "仿真M1":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "仿真M2":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            case "仿真主机":
+              res.img = "https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png"
+              break;
+            default:
+              break;
+          }
+          if (res.children && res.children.length) {
+            forEachTree(res.children)
+          }
+        })
+      }
+
+      /*
+      * 发送请求JSON数据
+      */
+      function requestPost() {
+        $.ajax({
+          type: "POST",
+          url: "http://10.10.10.97:40305/industrial/getHostStatus",
+          data: {},
+          contentType: "application/x-www-form-urlencoded",
+          dataType: "json",
+          success: function (response) {
+            const newRes = treeData(response, 'id', 'pid', 'children', 0)
+            const cloneData = JSON.parse(JSON.stringify(newRes))
+            forEachTree(cloneData)
+            initTreeGraph(cloneData[0])
+          },
+          fail: function (err) {
+            console.log(err)
+          }
+        });
+      }
+      requestPost()
+      // setInterval(requestPost, 300000); // 定时器5分钟 5*60s*1000ms
+      // setInterval(function() {
+      //   requestPost()
+      //   window.location.reload()
+      //   graph.refresh();
+      // }, 5200); // 定时器5分钟 5*60s*1000ms
+    })
+  </script>
+</body>
+
+</html>
