@@ -6,7 +6,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>G6</title>
-  <!-- <link rel="stylesheet" href="font/iconfont.css"> -->
   <style>
     @import 'font/iconfont.css';
     html,
@@ -53,50 +52,7 @@
   <script>
     $(function () {
       // 模拟数据
-      const mockData = [
-        {
-          id: 'g1',
-          name: 'DESKTOP-620124M', // 主机名
-          ip: '180.169.153.154', // IP
-          status: 'runing', // 主机类型
-          img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-          childList: [
-            {
-              id: 'g13',
-              name: 'DESKTOP-620124M',
-              ip: '180.169.153.15',
-              status: 'runing',
-              img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-              childList: [
-                {
-                  id: 'g131',
-                  name: '名称10',
-                  ip: '223.255.255.255',
-                  status: 'stop',
-                  img: 'https://gw.alipayobjects.com/mdn/rms_f8c6a0/afts/img/A*Q_FQT6nwEC8AAAAAAAAAAABkARQnAQ',
-                  childList: []
-                },
-                {
-                  id: 'g132',
-                  name: '名称11',
-                  ip: '223.255.255.255',
-                  status: 'runing',
-                  img: 'https://gw.alipayobjects.com/zos/basement_prod/4f81893c-1806-4de4-aff3-9a6b266bc8a2.svg',
-                  childList: []
-                }
-              ]
-            },
-            {
-              id: 'g14',
-              name: '名称12',
-              ip: '223.255.255.255',
-              status: 'stop',
-              img: 'https://g.alicdn.com/cm-design/arms-trace/1.0.155/styles/armsTrace/images/TAIR.png',
-              childList: []
-            }
-          ]
-        }
-      ]
+      const mockData = []
 
       //  组件props
       const props = {
@@ -212,42 +168,6 @@
                 }
               })
 
-              // bottom line
-              // group.addShape('rect', {
-              //   attrs: {
-              //     x: 0,
-              //     y: 70,
-              //     width: rectConfig.width,
-              //     height: 4,
-              //     radius: [0, 0, rectConfig.radius, rectConfig.radius],
-              //     fill: '#DCDFE5'
-              //   }
-              // })
-
-              // bottom percent
-              // group.addShape('rect', {
-              //   attrs: {
-              //     x: 0,
-              //     y: 70,
-              //     width: 100,
-              //     height: 4,
-              //     radius: [0, 0, 0, rectConfig.radius],
-              //     fill: lightColor
-              //   }
-              // })
-
-              // img图片图形
-              // group.addShape('image', {
-              //   attrs: {
-              //     x: 6,
-              //     y: 26,
-              //     width: 40,
-              //     height: 40,
-              //     show: true,
-              //     offset: 0, // 用于调整图标的左右位置
-              //     img: img
-              //   }
-              // })
               // iconfont图标
               group.addShape('text', {
                 attrs: {
@@ -262,18 +182,6 @@
                   fill: lightColor
                 }
               })
-
-              // 状态圆点
-              // group.addShape('circle', {
-              //   attrs: {
-              //     x: 25,
-              //     y: 13,
-              //     width: 16,
-              //     height: 16,
-              //     r: 8,
-              //     fill: lightColor
-              //   }
-              // })
 
               if (hasChildren) {
                 // collapse circle圆
@@ -428,7 +336,7 @@
         graph.data(getPosition(data, true)) // 加载数据
         graph.render() // 渲染
         setTimeout(() => {
-          graph.paint();
+          graph.paint()
         }, 16)
         graph.zoom(config.defaultZoom || 1)
         if (data.length) {

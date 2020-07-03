@@ -1,0 +1,254 @@
+{
+  "id": "1839933",
+  "name": "antV G6",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1174159",
+      "name": "电脑",
+      "font_class": "computers",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "1546178",
+      "name": "plc",
+      "font_class": "plc",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "1563455",
+      "name": "虚拟机",
+      "font_class": "virtual-machine",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "3171873",
+      "name": "电脑",
+      "font_class": "diannao",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "4968312",
+      "name": "交换机1",
+      "font_class": "jiaohuanji",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "5130047",
+      "name": "基站",
+      "font_class": "jizhan",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "5822938",
+      "name": "存储",
+      "font_class": "cunchu",
+      "unicode": "e731",
+      "unicode_decimal": 59185
+    },
+    {
+      "icon_id": "6045690",
+      "name": "监控",
+      "font_class": "jiankong",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    },
+    {
+      "icon_id": "6582741",
+      "name": "VM虚拟机－Iocn",
+      "font_class": "VMxunijiIocn",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "6764916",
+      "name": "存储",
+      "font_class": "portal-icon-cunchu",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "7057505",
+      "name": "监控审计",
+      "font_class": "icon-jiankongshenji",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "7107220",
+      "name": "电脑",
+      "font_class": "diannao1",
+      "unicode": "e6ca",
+      "unicode_decimal": 59082
+    },
+    {
+      "icon_id": "7146957",
+      "name": "电脑",
+      "font_class": "diannao2",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "7236248",
+      "name": "存储",
+      "font_class": "cunchu1",
+      "unicode": "e6e3",
+      "unicode_decimal": 59107
+    },
+    {
+      "icon_id": "7321707",
+      "name": "基站",
+      "font_class": "jizhan1",
+      "unicode": "e9ca",
+      "unicode_decimal": 59850
+    },
+    {
+      "icon_id": "7349194",
+      "name": "基站",
+      "font_class": "jizhan2",
+      "unicode": "eb04",
+      "unicode_decimal": 60164
+    },
+    {
+      "icon_id": "7445790",
+      "name": "交换机",
+      "font_class": "jiaohuanji1",
+      "unicode": "e745",
+      "unicode_decimal": 59205
+    },
+    {
+      "icon_id": "7904248",
+      "name": "警务-物-运营商基站",
+      "font_class": "jingwu-wu-yunyingshangjizhan",
+      "unicode": "e6c7",
+      "unicode_decimal": 59079
+    },
+    {
+      "icon_id": "8410306",
+      "name": "防火墙",
+      "font_class": "ziyuan",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "9368928",
+      "name": "虚拟机",
+      "font_class": "xuniji",
+      "unicode": "e92b",
+      "unicode_decimal": 59691
+    },
+    {
+      "icon_id": "9661818",
+      "name": "虚拟机",
+      "font_class": "xuniji1",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "9759251",
+      "name": "交换机",
+      "font_class": "jiaohuanji2",
+      "unicode": "e781",
+      "unicode_decimal": 59265
+    },
+    {
+      "icon_id": "10152444",
+      "name": "拓扑_防火墙_红",
+      "font_class": "tuopu_fanghuoqiang_hong",
+      "unicode": "e8e1",
+      "unicode_decimal": 59617
+    },
+    {
+      "icon_id": "10160260",
+      "name": "防火墙",
+      "font_class": "fanghuoqiang",
+      "unicode": "e6be",
+      "unicode_decimal": 59070
+    },
+    {
+      "icon_id": "10721097",
+      "name": "存储",
+      "font_class": "cunchu2",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "11203821",
+      "name": "监控",
+      "font_class": "jiankong1",
+      "unicode": "e787",
+      "unicode_decimal": 59271
+    },
+    {
+      "icon_id": "11272745",
+      "name": "虚拟机",
+      "font_class": "xuniji2",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "12614326",
+      "name": "存储05 (3)",
+      "font_class": "cunchu3",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "12678245",
+      "name": "电脑",
+      "font_class": "diannao3",
+      "unicode": "e675",
+      "unicode_decimal": 58997
+    },
+    {
+      "icon_id": "12809624",
+      "name": "监控审计",
+      "font_class": "jiankongshenji",
+      "unicode": "e7be",
+      "unicode_decimal": 59326
+    },
+    {
+      "icon_id": "14009132",
+      "name": "交换机",
+      "font_class": "jiaohuanji3",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "14636629",
+      "name": "监控",
+      "font_class": "jiankong2",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
+      "icon_id": "14747367",
+      "name": "分布式交换机",
+      "font_class": "fenbushijiaohuanji",
+      "unicode": "e732",
+      "unicode_decimal": 59186
+    },
+    {
+      "icon_id": "15009758",
+      "name": "PLC",
+      "font_class": "2",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "15233356",
+      "name": "监控器",
+      "font_class": "jiankongqi",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    }
+  ]
+}
